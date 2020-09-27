@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <data noupdate="0">
+        <!-- Actions -->
+        <record id="bc_certification_action" model="ir.actions.act_window">
+            <field name="name">Certification</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bc.certification</field>
+            <field name="view_mode">tree,kanban,form,pivot</field>
+        </record>
+        <record id="bc_certification_template_action" model="ir.actions.act_window">
+            <field name="name">Certification Templates</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bc.certification.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="bc_issuer_action" model="ir.actions.act_window">
+            <field name="name">Issuers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bc.issuer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Menus -->
+        <menuitem
+            id="bc_certification_main_menu"
+            name="Certification"
+            sequence="16"
+            web_icon="helpdesk_mgmt,static/description/icon.png"
+            groups="group_certification_user_own"
+        />
+        <menuitem
+            id="bc_certification_menu"
+            name="Certifications"
+            parent="bc_certification_main_menu"
+            action="bc_certification_action"
+            sequence="10"
+        />
+        <menuitem
+            id="bc_certication_config_main_menu"
+            name="Configuration"
+            parent="bc_certification_main_menu"
+            sequence="35"
+            groups="group_certification_manager"
+        />
+        <menuitem
+            id="bc_certification_template_menu"
+            name="Certification Templates"
+            parent="bc_certication_config_main_menu"
+            sequence="25"
+            action="bc_certification_template_action"
+        />
+        <menuitem
+            id="bc_issuer_menu"
+            name="Issuers"
+            parent="bc_certication_config_main_menu"
+            sequence="25"
+            action="bc_issuer_action"
+        />
+    </data>
+</odoo>

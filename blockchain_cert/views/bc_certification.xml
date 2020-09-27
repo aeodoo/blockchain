@@ -1,0 +1,38 @@
+<!-- Copyright (C) 2019 Konos
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <record id="view_bc_certification_form" model="ir.ui.view">
+        <field name="name">view.bc.certification.form</field>
+        <field name="model">bc.certification</field>
+        <field name="arch" type="xml">
+            <form string="Certification">
+                <header>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" required="1" />
+                        </h1>
+                    </div>
+                    <group name="main">
+                        <field name="partner_id" />
+                        <field name="bc_certification_template" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_bc_certification_tree" model="ir.ui.view">
+        <field name="name">view.bc.certification.tree</field>
+        <field name="model">bc.certification</field>
+        <field name="arch" type="xml">
+            <tree string="Certification">
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="bc_certification_template" />
+            </tree>
+        </field>
+    </record>
+</odoo>
