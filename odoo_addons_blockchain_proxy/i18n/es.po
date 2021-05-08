@@ -1,0 +1,223 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_addons_blockchain_proxy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-08 16:16+0000\n"
+"PO-Revision-Date: 2021-05-08 18:23+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid ""
+"<i class=\"fa fa-chevron-left\"/>\n"
+"                                            <span>Back</span>"
+msgstr ""
+"<i class=\"fa fa-chevron-left\"/>\n"
+"                                            <span>Atras</span>"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid ""
+"<span>Next</span>\n"
+"                                            <i class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span>Siguiente</span>\n"
+"                                            <i class=\"fa fa-chevron-right\"/>"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_bc_certification_template__badge_id
+msgid "Badge"
+msgstr "Insignia"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Be aware!"
+msgstr "¡Esté atento!"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.survey_form
+msgid "Blockchain"
+msgstr ""
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Blockchain Address"
+msgstr "Dirección Blockchain"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_event_event__is_blockchain_certification
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_survey__is_blockchain_certification
+msgid "Blockchain Certification"
+msgstr "Certificado con Blockchain"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.event_event_form
+msgid "Blockchain certification"
+msgstr "Certificado con Blockchain"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.event_event_form
+msgid "Certification"
+msgstr "Certificación"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_bc_certification_template
+msgid "Certification Template"
+msgstr "Plantilla de certificación"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "City"
+msgstr "Ciudad"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Country"
+msgstr "País"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Country..."
+msgstr "País . . ."
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Email"
+msgstr ""
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_event_event
+msgid "Event"
+msgstr "Evento"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Get Address with"
+msgstr "Tomar dirección con"
+
+#. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/controllers/main.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr "Correo no válido. Por favor proporcione un correo electrónico válido."
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Log In"
+msgstr "Entrar"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Name"
+msgstr "Nombre"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid ""
+"Ship to the same address\n"
+"                                                    <span class=\"ship_to_other text-muted\" style=\"display: none\">&amp;nbsp;(<i>Your shipping address will be requested later) </i></span>"
+msgstr ""
+"Envia a la misma dirección\n"
+"                                                    <span class=\"ship_to_other text-muted\" style=\"display: none\">&amp;nbsp;(<i>Se pedirá la dirección de envío más adelante) </i></span>"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Shipping Address"
+msgstr "Dirección de envío"
+
+#. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/controllers/main.py:0
+#, python-format
+msgid "Some required fields are empty."
+msgstr "Algunos campos requeridos están vacíos."
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "State / Province"
+msgstr "Provincia"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "State / Province..."
+msgstr "Provincia . . ."
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Street 2"
+msgstr "Calle 2"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Street <span class=\"d-none d-md-inline\"> and Number</span>"
+msgstr "Calle <span class=\"d-none d-md-inline\"> y Número</span>"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_survey_survey
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_event_event__survey_id
+msgid "Survey"
+msgstr "Planificación"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.event_event_form
+msgid "Survey certification"
+msgstr "Encuesta con certificación"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "True"
+msgstr "Cierto"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid ""
+"You are editing your <b>billing and shipping</b> addresses at the same time!<br/>\n"
+"                                            If you want to modify your shipping address, create a"
+msgstr ""
+"¡Está editando su dirección de<b>facturación y envío</b> a la misma vez!<br/>\n"
+"                                            si quieres modificar tu dirección de envío, crea una"
+
+#. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/models/event_event.py:0
+#, python-format
+msgid "You must fill a certification survey"
+msgstr "Debes rellenar la encuesta"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Your Address"
+msgstr "Tu dirección"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid ""
+"Your Address\n"
+"                                        <small> or </small>"
+msgstr ""
+"Tu dirección\n"
+"                                        <small> o </small>"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "Zip Code"
+msgstr "Código postal"
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
+msgid "new address"
+msgstr "Nueva dirección"

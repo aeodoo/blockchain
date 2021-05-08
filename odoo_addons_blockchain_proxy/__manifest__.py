@@ -18,7 +18,12 @@
         "website_event_sale",
         "auth_metamask",
     ],
-    "data": [],
+    "data": [
+        "views/survey_survey.xml",
+        "views/event_event.xml",
+        "views/bc_certification_template.xml",
+        "views/website_templates.xml",
+    ],
     "application": True,
     "development_status": "Alpha",
 }
