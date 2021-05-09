@@ -6,22 +6,24 @@
         inherit_id="website_sale.address"
     >
         <xpath expr="//form/div[last()]" position="replace">
-            <div class="form-row">
-                <div
-                    t-attf-class="form-group #{error.get('public_address') and 'o_has_error' or ''} col-lg-12 div_public_address"
-                >
-                    <label
-                        class="col-form-label"
-                        for="public_address"
-                    >Blockchain Address</label>
-                    <input
-                        type="text"
-                        name="public_address"
-                        t-attf-class="form-control #{error.get('public_address') and 'is-invalid' or ''}"
-                        t-att-value="'public_address' in checkout and checkout['public_address']"
-                    />
+            <t t-if="website_sale_order.is_blockchain_certification">
+                <div class="form-row">
+                    <div
+                        t-attf-class="form-group #{error.get('public_address') and 'o_has_error' or ''} col-lg-12 div_public_address"
+                    >
+                        <label
+                            class="col-form-label"
+                            for="public_address"
+                        >Blockchain Address</label>
+                        <input
+                            type="text"
+                            name="public_address"
+                            t-attf-class="form-control #{error.get('public_address') and 'is-invalid' or ''}"
+                            t-att-value="'public_address' in checkout and checkout['public_address']"
+                        />
+                    </div>
                 </div>
-            </div>
+            </t>
             <div class="d-flex justify-content-between">
                 <a
                     role="button"
@@ -31,15 +33,17 @@
                     <i class="fa fa-chevron-left" />
                     <span>Back</span>
                 </a>
-                <a
-                    class="btn btn-warning mb32 a-submit a-submit-disable a-submit-loading get-metamask-address"
-                >
-                    Get Address with
-                    <img
-                        src="/auth_metamask/static/src/img/mm-logo.svg"
-                        class="metamask-square o_custom_icon"
-                    />
-                </a>
+                <t t-if="website_sale_order.is_blockchain_certification">
+                    <a
+                        class="btn btn-warning mb32 a-submit a-submit-disable a-submit-loading get-metamask-address"
+                    >
+                        Get Address with
+                        <img
+                            src="/auth_metamask/static/src/img/mm-logo.svg"
+                            class="metamask-square o_custom_icon"
+                        />
+                    </a>
+                </t>
                 <a
                     role="button"
                     href="#"
