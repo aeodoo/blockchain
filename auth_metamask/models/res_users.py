@@ -23,22 +23,22 @@ class Users(models.Model):
             user_id.nonce = floor(random.random() * 1000000)
 
     nonce = fields.Integer(
-        string="Nonce", required=True, compute="_compute_nonce", store=True
+        string="Nonce", compute="_compute_nonce", store=True
     )
-    public_address = fields.Char(string="Public Address", required=True, index=True)
+    public_address = fields.Char(string="Public Address", index=True)
 
     _sql_constraints = [
         (
             "public_address",
-            "unique(public_address)",
+            "unique(public_address, active)",
             "This public address already exist",
         )
     ]
 
-    @api.onchange("public_address")
-    def set_upper(self):
-        self.public_address = str(self.public_address).lower()
-        return
+    @api.onchange("partner_id")
+    def _on_change_partner_id(self):
+        if not self.public_address:
+            self.public_address = str(self.partner_id.public_address).lower()
 
     @classmethod
     def _login(cls, db, login, password):

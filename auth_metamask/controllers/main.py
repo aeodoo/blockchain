@@ -19,6 +19,9 @@ class Metamask(Home):
             .sudo()
             .search([("public_address", "=", public_address)])
         )
+        if not user_id.nonce:
+            user_id._compute_nonce()
+            user_id.flush()
         result = {
             "public_address": public_address,
             "nonce": user_id.nonce if user_id else None,

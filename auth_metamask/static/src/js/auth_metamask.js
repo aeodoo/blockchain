@@ -1,3 +1,4 @@
+// Fmt: off
 odoo.define("auth_metamask.client", function(require) {
     "use strict";
 
@@ -50,7 +51,7 @@ odoo.define("auth_metamask.client", function(require) {
                 });
             }
         },
-        loginFlow: async function(self) {
+        get_coinbase: async function(self) {
             if (!self) {
                 self = this;
             }
@@ -87,9 +88,11 @@ odoo.define("auth_metamask.client", function(require) {
                     type: "danger",
                     sticky: false,
                 });
-                return;
             }
-
+            return coinbase;
+        },
+        loginFlow: async function(self) {
+            const coinbase = await self.get_coinbase(self);
             const publicAddress = coinbase.toLowerCase();
             $.get("/metamask/" + publicAddress, {})
                 .then(
@@ -170,4 +173,5 @@ odoo.define("auth_metamask.client", function(require) {
             this.loginFlow(this);
         },
     });
+    return publicWidget.registry.SignUpMetamaskForm;
 });

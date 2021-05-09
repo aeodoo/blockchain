@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template
+        id="assets_frontend"
+        inherit_id="website.assets_frontend"
+        name="Odoo Proxy Assets Frontend"
+    >
+        <xpath expr="//script[last()]" position="after">
+            <script
+                type="text/javascript"
+                src="/odoo_addons_blockchain_proxy/static/src/js/odoo_addons_blockchain_proxy.js"
+            />
+        </xpath>
+    </template>
+    <template
         id="address_with_blockchain"
         name="Address Management with Blockchain"
         inherit_id="website_sale.address"
@@ -17,6 +29,7 @@
                         >Blockchain Address</label>
                         <input
                             type="text"
+                            id="public_address"
                             name="public_address"
                             t-attf-class="form-control #{error.get('public_address') and 'is-invalid' or ''}"
                             t-att-value="'public_address' in checkout and checkout['public_address']"

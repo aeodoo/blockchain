@@ -23,6 +23,7 @@
         "views/event_event.xml",
         "views/bc_certification_template.xml",
         "views/website_templates.xml",
+        "views/res_partner.xml",
     ],
     "application": True,
     "development_status": "Alpha",
