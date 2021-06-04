@@ -93,57 +93,66 @@ odoo.define("auth_metamask.client", function(require) {
         },
         loginFlow: async function(self) {
             const coinbase = await self.get_coinbase(self);
-            const publicAddress = coinbase.toLowerCase();
-            $.get("/metamask/" + publicAddress, {})
-                .then(
-                    function(adr_nonce) {
-                        var jsonResult = JSON.parse(adr_nonce);
-                        if (!jsonResult.nonce) {
+            if (typeof coinbase !== "undefined") {
+                const publicAddress = coinbase.toLowerCase();
+                $.get("/metamask/" + publicAddress, {})
+                    .then(
+                        function(adr_nonce) {
+                            var jsonResult = JSON.parse(adr_nonce);
+                            if (!jsonResult.nonce) {
+                                self.displayNotification({
+                                    title: _t("Something went wrong."),
+                                    message: _t(
+                                        "No user with that Blockchain address is found"
+                                    ),
+                                    type: "danger",
+                                    sticky: false,
+                                });
+                            } else {
+                                return self.handleSignMessage(
+                                    // eslint-disable-next-line
+                                    web3,
+                                    jsonResult.public_address,
+                                    jsonResult.nonce
+                                );
+                            }
+                        },
+                        function(error) {
                             self.displayNotification({
                                 title: _t("Something went wrong."),
-                                message: _t(
-                                    "No user with that Blockchain address is found"
-                                ),
+                                message: error.responseText,
                                 type: "danger",
                                 sticky: false,
                             });
-                        } else {
-                            return self.handleSignMessage(
-                                // eslint-disable-next-line
-                                web3,
-                                jsonResult.public_address,
-                                jsonResult.nonce
-                            );
                         }
-                    },
-                    function(error) {
-                        self.displayNotification({
-                            title: _t("Something went wrong."),
-                            message: error.responseText,
-                            type: "danger",
-                            sticky: false,
-                        });
-                    }
-                )
-                .then(function(signed) {
-                    var data = {
-                        login: signed.publicAddress,
-                        password: signed.signature,
-                        csrf_token: $("[name='csrf_token']").val(),
-                    };
-                    $.post($("form").action, data)
-                        .then(function() {
-                            window.location = "/web";
-                        })
-                        .fail(function(response) {
-                            self.displayNotification({
-                                title: _t("Something went wrong."),
-                                message: response.responseText,
-                                type: "danger",
-                                sticky: false,
+                    )
+                    .then(function(signed) {
+                        var data = {
+                            login: signed.publicAddress,
+                            password: signed.signature,
+                            csrf_token: $("[name='csrf_token']").val(),
+                        };
+                        $.post($("form").action, data)
+                            .then(function() {
+                                window.location = "/web";
+                            })
+                            .fail(function(response) {
+                                self.displayNotification({
+                                    title: _t("Something went wrong."),
+                                    message: response.responseText,
+                                    type: "danger",
+                                    sticky: false,
+                                });
                             });
-                        });
+                    });
+            } else {
+                this.displayNotification({
+                    title: _t("Please, trying to connect."),
+                    message: _t("MetaMask initialization, be patient."),
+                    type: "info",
+                    sticky: false,
                 });
+            }
         },
         _onMetamaskLoginClick: async function() {
             var self = this;
