@@ -82,7 +82,7 @@ class Users(models.Model):
             message_hash = defunct_hash_message(text=msg)
             signer = w3.eth.account.recoverHash(message_hash, signature=password)
             if self.public_address == signer.lower():
-                self._compute_nonce()
+                self.sudo()._compute_nonce()
                 self.flush()
                 return True
             else:
