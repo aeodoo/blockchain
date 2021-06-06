@@ -20,10 +20,6 @@
                 <group name="criteria_narrative">
                     <field name="criteria_narrative" nolabel="1" />
                 </group>
-                <label for="template_content">Template content</label>
-                <group name="criteria_narrative">
-                    <field name="template_content" nolabel="1" />
-                </group>
             </xpath>
         </field>
     </record>
@@ -44,10 +40,6 @@
                 <label for="criteria_narrative">Criteria narrative</label>
                 <group name="criteria_narrative">
                     <field name="criteria_narrative" nolabel="1" />
-                </group>
-                <label for="template_content">Template content</label>
-                <group name="criteria_narrative">
-                    <field name="template_content" nolabel="1" />
                 </group>
             </xpath>
         </field>

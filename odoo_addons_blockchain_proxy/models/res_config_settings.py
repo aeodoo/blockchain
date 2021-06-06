@@ -12,9 +12,6 @@ class ResConfigSettings(models.TransientModel):
     template_dir = fields.Char(
         "Template directory", related="company_id.template_dir", readonly=False
     )
-    template_name = fields.Char(
-        "Template name", related="company_id.template_name", readonly=False
-    )
     issuer_id = fields.Char("Issuer ID", related="company_id.issuer_id", readonly=False)
     issuer_key = fields.Char(
         "Issuer private key", related="company_id.issuer_key", readonly=False
