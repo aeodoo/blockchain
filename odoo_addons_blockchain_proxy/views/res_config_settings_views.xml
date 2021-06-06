@@ -19,7 +19,7 @@
                         <div class="row mt16 o_settings_container">
                             <div
                                 class="col-12 col-lg-6 o_setting_box"
-                                title="Add a navigation menu to your event web pages with schedule, tracks, a track proposal form, etc."
+                                title="Allow your company to issue knowledge certifications hosted on the Blockchain"
                             >
                                 <div class="o_setting_left_pane">
                                     <field name="module_odoo_addons_blockchain_proxy" />
@@ -30,7 +30,125 @@
                                         for="module_odoo_addons_blockchain_proxy"
                                     />
                                     <div class="text-muted">
-                                        Manage your configuration
+                                        Allow your company to issue knowledge certifications hosted on the Blockchain
+                                    </div>
+                                    <div
+                                        class="content-group"
+                                        attrs="{'invisible': [('module_odoo_addons_blockchain_proxy', '=', False)]}"
+                                    >
+                                        <div class="row mt16">
+                                            <button
+                                                class="btn btn-warning d-block mx-auto"
+                                                type="object"
+                                                name="action_create_template"
+                                                icon="fa-puzzle-piece"
+                                            >
+                                                <span
+                                                    title="Fill template content."
+                                                >Fill template content</span>
+                                            </button>
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="data_dir"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="data_dir"
+                                                placeholder="/data_dir"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="template_dir"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="template_dir"
+                                                placeholder="/template_dir"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="template_name"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="template_name"
+                                                placeholder="Certification template name"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="template_content"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="template_content"
+                                                placeholder="Certification template name"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="issuer_id"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="issuer_id"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="issuer_key"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="issuer_key"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="issuer_public_key"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="issuer_public_key"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
