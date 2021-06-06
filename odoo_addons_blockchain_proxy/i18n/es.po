@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-08 16:16+0000\n"
-"PO-Revision-Date: 2021-05-08 18:23+0200\n"
+"POT-Creation-Date: 2021-06-06 09:43+0000\n"
+"PO-Revision-Date: 2021-06-06 11:45+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,34 +21,34 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
 msgid ""
 "<i class=\"fa fa-chevron-left\"/>\n"
-"                                            <span>Back</span>"
+"                    <span>Back</span>"
 msgstr ""
 "<i class=\"fa fa-chevron-left\"/>\n"
-"                                            <span>Atras</span>"
+"                    <span>Atrás</span>"
 
 #. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
 msgid ""
 "<span>Next</span>\n"
-"                                            <i class=\"fa fa-chevron-right\"/>"
+"                    <i class=\"fa fa-chevron-right\"/>"
 msgstr ""
 "<span>Siguiente</span>\n"
-"                                            <i class=\"fa fa-chevron-right\"/>"
+"                    <i class=\"fa fa-chevron-right\"/>"
 
 #. module: odoo_addons_blockchain_proxy
-#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_bc_certification_template__badge_id
-msgid "Badge"
-msgstr "Insignia"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Be aware!"
-msgstr "¡Esté atento!"
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.res_partner_form
+msgid "Address"
+msgstr "Dirección"
 
 #. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.survey_form
 msgid "Blockchain"
 msgstr ""
+
+#. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.survey_user_input_view_search_blockchain
+msgid "Blockchain (unpublished)"
+msgstr "Blockchain (No publicado)"
 
 #. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
@@ -57,6 +57,7 @@ msgstr "Dirección Blockchain"
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_event_event__is_blockchain_certification
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_sale_order__is_blockchain_certification
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_survey__is_blockchain_certification
 msgid "Blockchain Certification"
 msgstr "Certificado con Blockchain"
@@ -67,34 +68,30 @@ msgid "Blockchain certification"
 msgstr "Certificado con Blockchain"
 
 #. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.res_partner_form
+msgid "Blockchain info"
+msgstr "Información blockchain"
+
+#. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.event_event_form
 msgid "Certification"
 msgstr "Certificación"
 
 #. module: odoo_addons_blockchain_proxy
-#: model:ir.model,name:odoo_addons_blockchain_proxy.model_bc_certification_template
-msgid "Certification Template"
-msgstr "Plantilla de certificación"
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "City"
-msgstr "Ciudad"
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_gamification_badge__criteria_narrative
+msgid "Criteria Narrative"
+msgstr "Criterio"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Country"
-msgstr "País"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Country..."
-msgstr "País . . ."
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Email"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.badge_form_view_blockchain
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.gamification_badge_form_view_blockchain
+msgid "Criteria narrative"
+msgstr "Criterio"
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model,name:odoo_addons_blockchain_proxy.model_event_event
@@ -102,70 +99,34 @@ msgid "Event"
 msgstr "Evento"
 
 #. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_event_registration
+msgid "Event Registration"
+msgstr "Registro de eventos"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_gamification_badge
+msgid "Gamification Badge"
+msgstr "Insignia de Gamificación"
+
+#. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
 msgid "Get Address with"
 msgstr "Tomar dirección con"
 
 #. module: odoo_addons_blockchain_proxy
-#: code:addons/odoo_addons_blockchain_proxy/controllers/main.py:0
-#, python-format
-msgid "Invalid Email! Please enter a valid email address."
-msgstr "Correo no válido. Por favor proporcione un correo electrónico válido."
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_partner__public_address
+msgid "Public Address"
+msgstr "Dirección pública"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Log In"
-msgstr "Entrar"
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_user_input__blockchain_published
+msgid "Published on blockchain"
+msgstr "Publicado en blockchain"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Name"
-msgstr "Nombre"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Phone"
-msgstr "Teléfono"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid ""
-"Ship to the same address\n"
-"                                                    <span class=\"ship_to_other text-muted\" style=\"display: none\">&amp;nbsp;(<i>Your shipping address will be requested later) </i></span>"
-msgstr ""
-"Envia a la misma dirección\n"
-"                                                    <span class=\"ship_to_other text-muted\" style=\"display: none\">&amp;nbsp;(<i>Se pedirá la dirección de envío más adelante) </i></span>"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Shipping Address"
-msgstr "Dirección de envío"
-
-#. module: odoo_addons_blockchain_proxy
-#: code:addons/odoo_addons_blockchain_proxy/controllers/main.py:0
-#, python-format
-msgid "Some required fields are empty."
-msgstr "Algunos campos requeridos están vacíos."
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "State / Province"
-msgstr "Provincia"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "State / Province..."
-msgstr "Provincia . . ."
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Street 2"
-msgstr "Calle 2"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Street <span class=\"d-none d-md-inline\"> and Number</span>"
-msgstr "Calle <span class=\"d-none d-md-inline\"> y Número</span>"
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model,name:odoo_addons_blockchain_proxy.model_survey_survey
@@ -174,50 +135,27 @@ msgid "Survey"
 msgstr "Planificación"
 
 #. module: odoo_addons_blockchain_proxy
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_survey_user_input
+msgid "Survey User Input"
+msgstr "Entrada de usuario de la encuesta"
+
+#. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.event_event_form
 msgid "Survey certification"
 msgstr "Encuesta con certificación"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "True"
-msgstr "Cierto"
+#: model:ir.model.constraint,message:odoo_addons_blockchain_proxy.constraint_res_partner_public_address
+msgid "This public address already exist"
+msgstr "La dirección pública ya existe"
 
 #. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid ""
-"You are editing your <b>billing and shipping</b> addresses at the same time!<br/>\n"
-"                                            If you want to modify your shipping address, create a"
-msgstr ""
-"¡Está editando su dirección de<b>facturación y envío</b> a la misma vez!<br/>\n"
-"                                            si quieres modificar tu dirección de envío, crea una"
+#: model:ir.model,name:odoo_addons_blockchain_proxy.model_res_users
+msgid "Users"
+msgstr "Usuarios"
 
 #. module: odoo_addons_blockchain_proxy
 #: code:addons/odoo_addons_blockchain_proxy/models/event_event.py:0
 #, python-format
 msgid "You must fill a certification survey"
 msgstr "Debes rellenar la encuesta"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Your Address"
-msgstr "Tu dirección"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid ""
-"Your Address\n"
-"                                        <small> or </small>"
-msgstr ""
-"Tu dirección\n"
-"                                        <small> o </small>"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "Zip Code"
-msgstr "Código postal"
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.address_with_blockchain
-msgid "new address"
-msgstr "Nueva dirección"

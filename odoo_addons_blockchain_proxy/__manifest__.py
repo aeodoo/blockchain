@@ -10,9 +10,10 @@
     "Fernando La Chica (Guadaltech), "
     "Odoo Community Association (OCA)",
     "website": "https://githut.com/aeodoo/blockhain",
+    "external_dependencies": {"python": ["cert-issuer==2.0.27", "cert-tools==3.0.0a2"]},
     "depends": [
-        "blockchain_cert",
         "event",
+        "gamification",
         "survey",
         "event_sale",
         "website_event_sale",
@@ -20,8 +21,8 @@
     ],
     "data": [
         "views/survey_survey.xml",
+        "views/survey_user_input.xml",
         "views/event_event.xml",
-        "views/bc_certification_template.xml",
         "views/website_templates.xml",
         "views/res_partner.xml",
     ],

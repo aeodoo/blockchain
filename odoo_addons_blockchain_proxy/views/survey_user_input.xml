@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="survey_user_input_view_search_blockchain" model="ir.ui.view">
+        <field name="name">survey.user_input.view.search.blockchain</field>
+        <field name="model">survey.user_input</field>
+        <field name="inherit_id" ref="survey.survey_user_input_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter" position="before">
+                <filter
+                    name="pending_blockchain"
+                    string="Blockchain (unpublished)"
+                    domain="[
+                            ('survey_id.is_blockchain_certification', '=', True),
+                            ('blockchain_published', '=', False),
+                            ('quizz_passed','=', True),
+                            ('test_entry','=', False)
+                        ]"
+                />
+                <separator />
+            </xpath>
+        </field>
+    </record>
+</odoo>
