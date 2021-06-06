@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.blockchain</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="65" />
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div
+                        class="app_settings_block"
+                        data-string="Blockchain"
+                        string="Blockchain"
+                        data-key="odoo_addons_blockchain_proxy"
+                        groups="odoo_addons_blockchain_proxy.group_blockchain_manager"
+                    >
+                        <h2>Blockchain settings</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div
+                                class="col-12 col-lg-6 o_setting_box"
+                                title="Add a navigation menu to your event web pages with schedule, tracks, a track proposal form, etc."
+                            >
+                                <div class="o_setting_left_pane">
+                                    <field name="module_odoo_addons_blockchain_proxy" />
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label
+                                        string="Blockchain settings"
+                                        for="module_odoo_addons_blockchain_proxy"
+                                    />
+                                    <div class="text-muted">
+                                        Manage your configuration
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_blockchain_configuration" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field
+                name="context"
+            >{'module' : 'odoo_addons_blockchain_proxy', 'bin_size': False}</field>
+        </record>
+
+        <menuitem
+            id="menu_blockchain_global_settings"
+            name="Settings"
+            parent="menu_blockchain_configuration"
+            sequence="0"
+            action="action_blockchain_configuration"
+            groups="odoo_addons_blockchain_proxy.group_blockchain_manager"
+        />
+    </data>
+</odoo>
