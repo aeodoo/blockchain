@@ -15,9 +15,6 @@ class ResConfigSettings(models.TransientModel):
     template_name = fields.Char(
         "Template name", related="company_id.template_name", readonly=False
     )
-    template_content = fields.Html(
-        "Template content", related="company_id.template_content", readonly=False
-    )
     issuer_id = fields.Char("Issuer ID", related="company_id.issuer_id", readonly=False)
     issuer_key = fields.Char(
         "Issuer private key", related="company_id.issuer_key", readonly=False
@@ -25,6 +22,3 @@ class ResConfigSettings(models.TransientModel):
     issuer_public_key = fields.Char(
         "Issuer public key", related="company_id.issuer_public_key", readonly=False
     )
-
-    def action_create_template(self):
-        self.env.company.template_content = self.env.company.name

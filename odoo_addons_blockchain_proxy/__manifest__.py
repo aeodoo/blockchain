@@ -21,6 +21,7 @@
     ],
     "data": [
         "security/survey_security.xml",
+        "views/gamification_badge_views.xml",
         "views/survey_survey_views.xml",
         "views/survey_user_input_views.xml",
         "views/event_event_views.xml",

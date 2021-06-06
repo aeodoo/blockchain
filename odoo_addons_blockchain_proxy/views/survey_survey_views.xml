@@ -12,30 +12,4 @@
             </xpath>
         </field>
     </record>
-    <record id="gamification_badge_form_view_blockchain" model="ir.ui.view">
-        <field name="name">gamification.badge.form.view.blockchain</field>
-        <field name="model">gamification.badge</field>
-        <field name="inherit_id" ref="survey.gamification_badge_form_view_simplified" />
-        <field name="arch" type="xml">
-            <xpath expr="//group[1]" position="after">
-                <label for="criteria_narrative">Criteria narrative</label>
-                <group name="blockchain">
-                    <field name="criteria_narrative" nolabel="1" />
-                </group>
-            </xpath>
-        </field>
-    </record>
-    <record id="badge_form_view_blockchain" model="ir.ui.view">
-        <field name="name">gamification.form.view.blockchain</field>
-        <field name="model">gamification.badge</field>
-        <field name="inherit_id" ref="gamification.badge_form_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//group[1]" position="after">
-                <label for="criteria_narrative">Criteria narrative</label>
-                <group name="blockchain">
-                    <field name="criteria_narrative" nolabel="1" />
-                </group>
-            </xpath>
-        </field>
-    </record>
 </odoo>
