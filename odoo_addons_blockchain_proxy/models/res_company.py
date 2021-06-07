@@ -6,8 +6,8 @@ class ResCompany(models.Model):
 
     email = fields.Char(required=True)
     data_dir = fields.Char("Data directory", default="/data_dir")
-    template_dir = fields.Char("Template directory", default="/template_dir")
 
     issuer_id = fields.Char("Issuer ID")
     issuer_key = fields.Char("Issuer private key")
     issuer_public_key = fields.Char("Issuer public key")
+    issuer_certs_url = fields.Char("Issuer URL")

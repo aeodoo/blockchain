@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 05:36+0000\n"
-"PO-Revision-Date: 2021-06-07 07:50+0200\n"
+"POT-Creation-Date: 2021-06-07 09:08+0000\n"
+"PO-Revision-Date: 2021-06-07 11:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,6 @@ msgstr ""
 #. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.res_config_settings_view_form
 msgid "/data_dir"
-msgstr ""
-
-#. module: odoo_addons_blockchain_proxy
-#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.res_config_settings_view_form
-msgid "/template_dir"
 msgstr ""
 
 #. module: odoo_addons_blockchain_proxy
@@ -92,7 +87,6 @@ msgstr "Dirección Blockchain"
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_event_event__survey_id
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_sale_order__is_blockchain_certification
-#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_survey__is_blockchain_certification
 msgid "Blockchain Certification"
 msgstr "Certificado con Blockchain"
 
@@ -143,6 +137,11 @@ msgstr "Contacto"
 
 #. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.badge_form_view_blockchain
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.survey_form
+msgid "Create blockchain template"
+msgstr "Crear plantilla blockchain"
+
+#. module: odoo_addons_blockchain_proxy
 #: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.gamification_badge_form_view_blockchain
 msgid "Create template"
 msgstr "Crear plantilla"
@@ -190,15 +189,27 @@ msgid "Get Address with"
 msgstr "Tomar dirección con"
 
 #. module: odoo_addons_blockchain_proxy
+#: model_terms:ir.ui.view,arch_db:odoo_addons_blockchain_proxy.survey_form
+msgid "Instantiate blockchain template"
+msgstr "Instanciar plantilla blockchain"
+
+#. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_event_event__is_blockchain_certification
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_survey__is_blockchain_certification
 msgid "Is blockchain certification"
-msgstr "Es para certificación para Blockchain"
+msgstr "Es certificación blockchain"
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_company__issuer_id
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_config_settings__issuer_id
 msgid "Issuer ID"
 msgstr "ID Emisor"
+
+#. module: odoo_addons_blockchain_proxy
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_company__issuer_certs_url
+#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_config_settings__issuer_certs_url
+msgid "Issuer URL"
+msgstr "URL emisor"
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_company__issuer_key
@@ -213,6 +224,14 @@ msgid "Issuer public key"
 msgstr "Clave pública emisor"
 
 #. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/models/survey_survey.py:0
+#, python-format
+msgid "Partner {} {} must have filled name, email and public address"
+msgstr ""
+"El contacto {} {} debe tener rellenos los campos nombre, email y dirección "
+"pública"
+
+#. module: odoo_addons_blockchain_proxy
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_partner__public_address
 msgid "Public Address"
 msgstr "Dirección pública"
@@ -221,6 +240,12 @@ msgstr "Dirección pública"
 #: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_survey_user_input__blockchain_published
 msgid "Published on blockchain"
 msgstr "Publicado en blockchain"
+
+#. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/models/survey_survey.py:0
+#, python-format
+msgid "RETURN CODE: "
+msgstr "Código respuesta: "
 
 #. module: odoo_addons_blockchain_proxy
 #: model:ir.model,name:odoo_addons_blockchain_proxy.model_sale_order
@@ -244,12 +269,6 @@ msgid "Survey User Input"
 msgstr "Entrada de usuario de la encuesta"
 
 #. module: odoo_addons_blockchain_proxy
-#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_company__template_dir
-#: model:ir.model.fields,field_description:odoo_addons_blockchain_proxy.field_res_config_settings__template_dir
-msgid "Template directory"
-msgstr "Subcarpeta plantilla"
-
-#. module: odoo_addons_blockchain_proxy
 #: model:ir.model.constraint,message:odoo_addons_blockchain_proxy.constraint_res_partner_public_address
 msgid "This public address already exist"
 msgstr "La dirección pública ya existe"
@@ -258,6 +277,12 @@ msgstr "La dirección pública ya existe"
 #: model:ir.model,name:odoo_addons_blockchain_proxy.model_res_users
 msgid "Users"
 msgstr "Usuarios"
+
+#. module: odoo_addons_blockchain_proxy
+#: code:addons/odoo_addons_blockchain_proxy/models/survey_survey.py:0
+#, python-format
+msgid "You must create a valid template first"
+msgstr "Debe crear una plantilla primero"
 
 #. module: odoo_addons_blockchain_proxy
 #: code:addons/odoo_addons_blockchain_proxy/models/event_event.py:0

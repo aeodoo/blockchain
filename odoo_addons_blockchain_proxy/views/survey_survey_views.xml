@@ -5,6 +5,22 @@
         <field name="model">survey.survey</field>
         <field name="inherit_id" ref="survey.survey_form" />
         <field name="arch" type="xml">
+            <button name="action_result_survey" position="after">
+                <button
+                    name="action_create_template"
+                    string="Create blockchain template"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('state', '!=', 'closed')]}"
+                />
+                <button
+                    name="action_instantiate_template"
+                    string="Instantiate blockchain template"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('state', '!=', 'closed')]}"
+                />
+            </button>
             <xpath expr="//group[@name='questions']" position="before">
                 <group string="Blockchain" name="blockchain">
                     <field name="is_blockchain_certification" />

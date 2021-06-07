@@ -53,21 +53,6 @@
                                         </div>
                                         <div class="row mt16">
                                             <label
-                                                for="template_dir"
-                                                class="col-lg-3 o_light_label"
-                                            />
-                                            <field
-                                                name="template_dir"
-                                                placeholder="/template_dir"
-                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
-                                            />
-                                            <span
-                                                class="fa fa-lg fa-building-o"
-                                                title="Values set here are company-specific."
-                                            />
-                                        </div>
-                                        <div class="row mt16">
-                                            <label
                                                 for="issuer_id"
                                                 class="col-lg-3 o_light_label"
                                             />
@@ -101,6 +86,20 @@
                                             />
                                             <field
                                                 name="issuer_public_key"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="issuer_certs_url"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="issuer_certs_url"
                                                 attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
                                             />
                                             <span

@@ -33,7 +33,7 @@
                     class="oe_highlight"
                     type="object"
                     name="action_create_template"
-                    string="Create template"
+                    string="Create blockchain template"
                 />
             </xpath>
             <xpath expr="//group[1]" position="after">
