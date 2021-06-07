@@ -38,6 +38,34 @@
                                     >
                                         <div class="row mt16">
                                             <label
+                                                for="environment"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="environment"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="cert_issuer_path"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="cert_issuer_path"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
                                                 for="data_dir"
                                                 class="col-lg-3 o_light_label"
                                             />
@@ -102,6 +130,31 @@
                                                 name="issuer_certs_url"
                                                 attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
                                             />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="gas_limit"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field
+                                                name="gas_limit"
+                                                attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
+                                            />
+                                            <span
+                                                class="fa fa-lg fa-building-o"
+                                                title="Values set here are company-specific."
+                                            />
+                                        </div>
+                                        <div class="row mt16">
+                                            <label
+                                                for="etherscan_api_token"
+                                                class="col-lg-3 o_light_label"
+                                            />
+                                            <field name="etherscan_api_token" />
                                             <span
                                                 class="fa fa-lg fa-building-o"
                                                 title="Values set here are company-specific."

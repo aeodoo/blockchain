@@ -6,24 +6,42 @@
         <field name="inherit_id" ref="survey.survey_form" />
         <field name="arch" type="xml">
             <button name="action_result_survey" position="after">
+                <field name="blockchain_controls_visible" invisible="1" />
                 <button
                     name="action_create_template"
                     string="Create blockchain template"
                     type="object"
                     class="oe_highlight"
-                    attrs="{'invisible': [('state', '!=', 'closed')]}"
+                    attrs="{'invisible': [('blockchain_controls_visible', '=', False)]}"
                 />
                 <button
                     name="action_instantiate_template"
                     string="Instantiate blockchain template"
                     type="object"
                     class="oe_highlight"
-                    attrs="{'invisible': [('state', '!=', 'closed')]}"
+                    attrs="{'invisible': [('blockchain_controls_visible', '=', False)]}"
+                />
+                <button
+                    name="action_sign_and_send_certificates"
+                    string="Sign and send certificates"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('blockchain_controls_visible', '=', False)]}"
+                />
+                <button
+                    name="action_unpublish"
+                    string="Despublicar"
+                    type="object"
+                    class="oe_highlight"
                 />
             </button>
             <xpath expr="//group[@name='questions']" position="before">
                 <group string="Blockchain" name="blockchain">
                     <field name="is_blockchain_certification" />
+                    <field
+                        name="blockchain_published"
+                        attrs="{'invisible': [('is_blockchain_certification', '=', False)]}"
+                    />
                 </group>
             </xpath>
         </field>

@@ -3,7 +3,8 @@ import logging
 import os
 import subprocess
 
-from odoo import fields, models
+from odoo import _, fields, models
+from odoo.exceptions import ValidationError
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +25,8 @@ class GamificationBadge(models.Model):
             os.makedirs(template_dir)
 
         for badge_id in self:
+            if not badge_id.image_1920:
+                raise ValidationError(_("Your badget must have image"))
             badge_file_name = (
                 abs_path
                 + os.sep
@@ -72,7 +75,7 @@ class GamificationBadge(models.Model):
                     logger.info(log_line)
                 return_code = process.poll()
                 if return_code is not None:
-                    logger.info("RETURN CODE" + str(return_code))
+                    logger.info(_("RETURN CODE: ") + str(return_code))
                     for output in process.stdout.readlines():
                         logger.info(output.strip())
                     break
