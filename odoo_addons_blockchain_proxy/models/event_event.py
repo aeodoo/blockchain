@@ -5,8 +5,10 @@ from odoo.exceptions import ValidationError
 class EventEvent(models.Model):
     _inherit = "event.event"
 
-    is_blockchain_certification = fields.Boolean("Blockchain Certification")
-    survey_id = fields.Many2one(comodel_name="survey.survey")
+    is_blockchain_certification = fields.Boolean("Is blockchain certification")
+    survey_id = fields.Many2one(
+        comodel_name="survey.survey", string="Blockchain Certification"
+    )
 
     @api.onchange("is_blockchain_certification")
     def on_change_is_blockchain_certification(self):

@@ -23,11 +23,7 @@
                     groups="base.group_no_one"
                     attrs="{'invisible': [('is_blockchain_certification', '=', False)]}"
                 >
-                        <label
-                        for="survey_id"
-                        string="Survey certification"
-                        groups="base.group_no_one"
-                    />
+                        <label for="survey_id" string="Blockchain certification" />
                         <field
                         name="survey_id"
                         attrs="{'required': [('is_blockchain_certification', '=', True)]}"

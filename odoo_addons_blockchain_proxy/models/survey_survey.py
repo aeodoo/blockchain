@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class SurveySurvey(models.Model):
     _inherit = "survey.survey"
 
-    is_blockchain_certification = fields.Boolean("Blockchain Certification")
+    is_blockchain_certification = fields.Boolean("Is blockchain certification")
 
     @api.onchange("is_blockchain_certification")
     def on_change_is_blockchain_certification(self):
