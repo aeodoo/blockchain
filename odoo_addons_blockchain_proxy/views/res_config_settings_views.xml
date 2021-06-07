@@ -52,11 +52,11 @@
                                         </div>
                                         <div class="row mt16">
                                             <label
-                                                for="cert_issuer_path"
+                                                for="blockcert_path"
                                                 class="col-lg-3 o_light_label"
                                             />
                                             <field
-                                                name="cert_issuer_path"
+                                                name="blockcert_path"
                                                 attrs="{'required': [('module_odoo_addons_blockchain_proxy', '=', True)]}"
                                             />
                                             <span

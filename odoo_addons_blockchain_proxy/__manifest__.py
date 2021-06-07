@@ -17,6 +17,7 @@
         "event_sale",
         "website_event_sale",
         "auth_metamask",
+        "queue_job",
     ],
     "data": [
         "security/survey_security.xml",

@@ -7,8 +7,8 @@ class ResConfigSettings(models.TransientModel):
     module_odoo_addons_blockchain_proxy = fields.Boolean("Blockchain module")
 
     environment = fields.Selection(related="company_id.environment", readonly=False)
-    cert_issuer_path = fields.Char(
-        "Cert-issuer path", related="company_id.cert_issuer_path", readonly=False
+    blockcert_path = fields.Char(
+        "Blockcert path", related="company_id.blockcert_path", readonly=False
     )
     data_dir = fields.Char(
         "Data directory", related="company_id.data_dir", readonly=False

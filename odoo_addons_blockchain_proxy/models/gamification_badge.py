@@ -45,7 +45,14 @@ class GamificationBadge(models.Model):
 
             process = subprocess.Popen(
                 [
-                    "create-certificate-template",
+                    "python",
+                    self.env.company.blockcert_path
+                    + os.sep
+                    + "cert-tools"
+                    + os.sep
+                    + "cert_tools"
+                    + os.sep
+                    + "create_v2_certificate_template.py",
                     "--data_dir=" + abs_path,
                     "--template_dir=" + template_dir,
                     "--template_name=" + badge_id.name,
@@ -54,8 +61,9 @@ class GamificationBadge(models.Model):
                     "--issuer_email=" + self.env.company.email or "",
                     "--issuer_name=" + self.env.company.name or "",
                     "--issuer_id=" + self.env.company.issuer_id or "",
-                    "--issuer_key=" + self.env.company.issuer_key or "",
-                    "--issuer_public_key=" + self.env.company.issuer_public_key or "",
+                    "--issuer_key=" + self.env.company.issuer_key.lower() or "",
+                    "--issuer_public_key=" + self.env.company.issuer_public_key.lower()
+                    or "",
                     "--issuer_url=" + self.env.company.issuer_certs_url,
                     "--certificate_title=" + badge_id.name or "",
                     "--criteria_narrative=" + badge_id.criteria_narrative or "",

@@ -28,12 +28,6 @@
                     class="oe_highlight"
                     attrs="{'invisible': [('blockchain_controls_visible', '=', False)]}"
                 />
-                <button
-                    name="action_unpublish"
-                    string="Despublicar"
-                    type="object"
-                    class="oe_highlight"
-                />
             </button>
             <xpath expr="//group[@name='questions']" position="before">
                 <group string="Blockchain" name="blockchain">

@@ -1,6 +1,7 @@
 import logging
 import os
 import re
+import shutil
 import subprocess
 
 from odoo import _, api, fields, models
@@ -92,41 +93,67 @@ class SurveySurvey(models.Model):
         if not os.path.exists(unsigned_certificates_dir):
             raise ValidationError(_("You must instantiate templates"))
         if os.path.exists(blockchain_certificates_dir):
-            os.removedirs(blockchain_certificates_dir)
+            shutil.rmtree(blockchain_certificates_dir, ignore_errors=True)
         os.makedirs(blockchain_certificates_dir)
         if os.path.exists(signed_certificates_dir):
-            os.removedirs(signed_certificates_dir)
+            shutil.rmtree(signed_certificates_dir, ignore_errors=True)
         os.makedirs(signed_certificates_dir)
         work_dir = path + os.sep + "work_dir"
         if os.path.exists(work_dir):
-            os.removedirs(work_dir)
+            shutil.rmtree(work_dir, ignore_errors=True)
         os.makedirs(work_dir)
-        conf_filename = path + os.sep + "conf.ini"
-        if os.path.exists(conf_filename):
-            os.remove(conf_filename)
+        key_filename = path + os.sep + "key_file.ini"
+        if os.path.exists(key_filename):
+            os.remove(key_filename)
 
-        f = open(conf_filename, "a")
-        content_file = (
-            ""
-            "issuing_address={}\n"
-            "chain={}\n"
-            "key_file={}\n"
-            "unsigned_certificates_dir={}\n"
-            "blockchain_certificates_dir={}\n"
-            "work_dir={}\n"
-            "no_safe_mode"
-        )
-        content_file = content_file.format(
-            self.env.company.issuer_public_key,
-            self.env.company.environment,
-            self.env.company.issuer_key,
-            unsigned_certificates_dir,
-            blockchain_certificates_dir,
-            work_dir,
-        )
-        f.write(content_file)
+        f = open(key_filename, "a")
+        f.write(self.env.company.issuer_key.lower())
         f.close()
-        return conf_filename
+
+    def sign_and_send_certificates(self):
+        if self.blockchain_published:
+            return
+        abs_path = os.path.abspath(self.env.company.data_dir)
+        user_input_ids = self.get_user_inputs()
+        args = [
+            "python",
+            self.env.company.blockcert_path
+            + os.sep
+            + "cert-issuer"
+            + os.sep
+            + "cert_issuer",
+            "-m cert_issuer",
+            "--issuing_address=" + self.env.company.issuer_public_key.lower(),
+            "--key_file=key_file.ini",
+            "--usb_name=" + abs_path,
+            "--unsigned_certificates_dir="
+            + os.path.join(abs_path, "unsigned_certificates_dir"),
+            "--signed_certificates_dir="
+            + os.path.join(abs_path, "signed_certificates_dir"),
+            "--blockchain_certificates_dir=" + os.path.join(abs_path, "work_dir"),
+            "--chain=" + self.env.company.environment,
+            "--no_safe_mode=True",
+            "--gas_limit=" + str(self.env.company.gas_limit or 40000),
+        ]
+        if self.env.company.etherscan_api_token:
+            args.append("--etherscan_api_token" + self.env.company.etherscan_api_token)
+        process = subprocess.Popen(
+            args, stdout=subprocess.PIPE, universal_newlines=True,
+        )
+        while True:
+            output = process.stdout.readline()
+            log_line = output.strip()
+            if log_line:
+                logger.info(log_line)
+            return_code = process.poll()
+            if return_code is not None:
+                logger.info(_("RETURN CODE: ") + str(return_code))
+                for output in process.stdout.readlines():
+                    logger.info(output.strip())
+                break
+        if return_code == 0:
+            user_input_ids.write({"blockchain_published": True})
+            self.blockchain_published = True
 
     def action_sign_and_send_certificates(self):
         abs_path = os.path.abspath(self.env.company.data_dir)
@@ -134,45 +161,8 @@ class SurveySurvey(models.Model):
             user_input_ids = survey_id.get_user_inputs()
             if not user_input_ids:
                 raise ValidationError(_("No users has passed the exam"))
-            self.prepare_configuration_issuer(
-                os.path.abspath(self.env.company.data_dir)
-            )
-            args = [
-                "python",
-                self.env.company.cert_issuer_path,
-                "-m cert_issuer",
-                "--issuing_address=" + self.env.company.issuer_public_key,
-                "--key_file=" + self.env.company.issuer_key,
-                "--usb_name=",
-                "--unsigned_certificates_dir="
-                + os.path.join(abs_path, "unsigned_certificates_dir"),
-                "--signed_certificates_dir="
-                + os.path.join(abs_path, "signed_certificates_dir"),
-                "--blockchain_certificates_dir=" + os.path.join(abs_path, "work_dir"),
-                "--chain=" + self.env.company.environment,
-                "--gas_limit=" + str(self.env.company.gas_limit or 20000),
-            ]
-            if self.env.company.etherscan_api_token:
-                args.append(
-                    "--etherscan_api_token" + self.env.company.etherscan_api_token
-                )
-            process = subprocess.Popen(
-                args, stdout=subprocess.PIPE, universal_newlines=True,
-            )
-            while True:
-                output = process.stdout.readline()
-                log_line = output.strip()
-                if log_line:
-                    logger.info(log_line)
-                return_code = process.poll()
-                if return_code is not None:
-                    logger.info(_("RETURN CODE: ") + str(return_code))
-                    for output in process.stdout.readlines():
-                        logger.info(output.strip())
-                    break
-            if return_code == 0:
-                user_input_ids.write({"blockchain_published": True})
-                survey_id.blockchain_published = True
+            self.prepare_configuration_issuer(abs_path)
+            survey_id.with_delay().sign_and_send_certificates()
 
     def action_unpublish(self):
         for survey_id in self:
@@ -208,7 +198,14 @@ class SurveySurvey(models.Model):
             roster_filename = survey_id.create_current_roster(abs_path)
             process = subprocess.Popen(
                 [
-                    "instantiate-certificate-batch",
+                    "python",
+                    self.env.company.blockcert_path
+                    + os.sep
+                    + "cert-tools"
+                    + os.sep
+                    + "cert_tools"
+                    + os.sep
+                    + "instantiate_v2_certificate_batch.py",
                     "--data_dir=" + abs_path,
                     "--issuer_certs_url=" + self.env.company.issuer_certs_url,
                     "--template_dir=" + template_dir,

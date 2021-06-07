@@ -9,7 +9,7 @@ class ResCompany(models.Model):
         "Environment",
         default="ethereum_ropsten",
     )
-    cert_issuer_path = fields.Char("Cert-issuer path")
+    blockcert_path = fields.Char("Blockcert path")
     email = fields.Char(required=True)
     data_dir = fields.Char("Data directory", default="/data_dir")
 
